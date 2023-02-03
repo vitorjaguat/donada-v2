@@ -117,6 +117,34 @@ container.addEventListener('mousemove', (e) => {
   const x = e.offsetX;
   const cWidth = container.offsetWidth;
   const l = pics.length;
+  pics.forEach((pic, i, arr) => {
+    if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
+      arr.forEach((p) => (p.style.opacity = 0));
+      pic.style.opacity = 1;
+    }
+  });
+});
+
+container.addEventListener('touchstart', (e) => {
+  //erase all:
+  pics.forEach((pic) => (pic.style.opacity = 0));
+  //show pic:
+  const x = e.offsetX;
+  const cWidth = container.offsetWidth;
+  const l = pics.length;
+  console.log(x);
+  pics.forEach((pic, i, arr) => {
+    if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
+      arr.forEach((p) => (p.style.opacity = 0));
+      pic.style.opacity = 1;
+    }
+  });
+});
+
+container.addEventListener('mousemove', (e) => {
+  const x = e.offsetX;
+  const cWidth = container.offsetWidth;
+  const l = pics.length;
   console.log(x);
   pics.forEach((pic, i, arr) => {
     if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
