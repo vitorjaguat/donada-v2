@@ -41,9 +41,9 @@ for (i = 0; i < 24; i++) {
   const newImg = document.createElement('img');
   newImg.classList.add('pic');
   if (i < 9) {
-    newImg.src = `/img/0${i + 1}.jpg`;
+    newImg.src = `./img/0${i + 1}.jpg`;
   } else {
-    newImg.src = `/img/${i + 1}.jpg`;
+    newImg.src = `./img/${i + 1}.jpg`;
   }
   //   newDiv.style.background = 'url("./img/")';
   newImg.style.zIndex = i;
