@@ -110,7 +110,15 @@ function scale(number, inMin, inMax, outMin, outMax) {
 pics[0].style.opacity = 1;
 
 container.addEventListener('mouseenter', (e) => {
-  pics.forEach((pic) => (pic.style.opacity = 0));
+  const x = e.offsetX;
+  const cWidth = container.offsetWidth;
+  const l = pics.length;
+  pics.forEach((pic, i, arr) => {
+    if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
+      pic.style.opacity = 1;
+      arr.forEach((p) => (p.style.opacity = 0));
+    }
+  });
 });
 
 container.addEventListener('mousemove', (e) => {
@@ -128,14 +136,9 @@ container.addEventListener('mousemove', (e) => {
 container.addEventListener(
   'pointerenter',
   (e) => {
-    // e.preventDefault();
-    //erase all:
-    pics.forEach((pic) => (pic.style.opacity = 0));
-    //show pic:
     const x = e.offsetX;
     const cWidth = container.offsetWidth;
     const l = pics.length;
-    console.log(x);
     pics.forEach((pic, i, arr) => {
       if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
         pic.style.opacity = 1;
@@ -153,11 +156,10 @@ container.addEventListener(
     const x = e.offsetX;
     const cWidth = container.offsetWidth;
     const l = pics.length;
-    console.log(x);
     pics.forEach((pic, i, arr) => {
       if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
-        arr.forEach((p) => (p.style.opacity = 0));
         pic.style.opacity = 1;
+        arr.forEach((p) => (p.style.opacity = 0));
       }
     });
   }
