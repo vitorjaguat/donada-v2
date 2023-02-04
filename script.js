@@ -126,9 +126,9 @@ container.addEventListener('mousemove', (e) => {
 });
 
 container.addEventListener(
-  'touchstart',
+  'pointerenter',
   (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     //erase all:
     pics.forEach((pic) => (pic.style.opacity = 0));
     //show pic:
@@ -142,14 +142,14 @@ container.addEventListener(
         pic.style.opacity = 1;
       }
     });
-  },
-  { passive: false }
+  }
+  // { passive: false }
 );
 
 container.addEventListener(
-  'touchmove',
+  'pointermove',
   (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const x = e.offsetX;
     const cWidth = container.offsetWidth;
     const l = pics.length;
@@ -160,8 +160,8 @@ container.addEventListener(
         pic.style.opacity = 1;
       }
     });
-  },
-  { passive: false }
+  }
+  // { passive: false }
 );
 
 // container.addEventListener('mousemove', (e) => {
