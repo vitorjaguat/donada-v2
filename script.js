@@ -119,8 +119,8 @@ container.addEventListener('mousemove', (e) => {
   const l = pics.length;
   pics.forEach((pic, i, arr) => {
     if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
-      arr.forEach((p) => (p.style.opacity = 0));
       pic.style.opacity = 1;
+      arr.forEach((p) => (p.style.opacity = 0));
     }
   });
 });
@@ -138,8 +138,8 @@ container.addEventListener(
     console.log(x);
     pics.forEach((pic, i, arr) => {
       if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
-        arr.forEach((p) => (p.style.opacity = 0));
         pic.style.opacity = 1;
+        arr.forEach((p) => (p.style.opacity = 0));
       }
     });
   }
