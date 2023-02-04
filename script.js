@@ -114,9 +114,15 @@ container.addEventListener('mouseenter', (e) => {
   const cWidth = container.offsetWidth;
   const l = pics.length;
   pics.forEach((pic, i, arr) => {
+    pic.classList.remove('on');
     if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
       pic.style.opacity = 1;
-      arr.forEach((p) => (p.style.opacity = 0));
+      pic.classList.add('on');
+      arr.forEach((p) => {
+        if (!p.classList.contains('on')) {
+          p.style.opacity = 0;
+        }
+      });
     }
   });
 });
@@ -126,9 +132,15 @@ container.addEventListener('mousemove', (e) => {
   const cWidth = container.offsetWidth;
   const l = pics.length;
   pics.forEach((pic, i, arr) => {
+    pic.classList.remove('on');
     if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
       pic.style.opacity = 1;
-      arr.forEach((p) => (p.style.opacity = 0));
+      pic.classList.add('on');
+      arr.forEach((p) => {
+        if (!p.classList.contains('on')) {
+          p.style.opacity = 0;
+        }
+      });
     }
   });
 });
@@ -140,9 +152,15 @@ container.addEventListener(
     const cWidth = container.offsetWidth;
     const l = pics.length;
     pics.forEach((pic, i, arr) => {
+      pic.classList.remove('on');
       if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
         pic.style.opacity = 1;
-        arr.forEach((p) => (p.style.opacity = 0));
+        pic.classList.add('on');
+        arr.forEach((p) => {
+          if (!p.classList.contains('on')) {
+            p.style.opacity = 0;
+          }
+        });
       }
     });
   }
@@ -157,9 +175,15 @@ container.addEventListener(
     const cWidth = container.offsetWidth;
     const l = pics.length;
     pics.forEach((pic, i, arr) => {
+      pic.classList.remove('on');
       if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
         pic.style.opacity = 1;
-        arr.forEach((p) => (p.style.opacity = 0));
+        pic.classList.add('on');
+        arr.forEach((p) => {
+          if (!p.classList.contains('on')) {
+            p.style.opacity = 0;
+          }
+        });
       }
     });
   }
