@@ -141,7 +141,7 @@ container.addEventListener('touchstart', (e) => {
   });
 });
 
-container.addEventListener('mousemove', (e) => {
+container.addEventListener('touchmove', (e) => {
   const x = e.offsetX;
   const cWidth = container.offsetWidth;
   const l = pics.length;

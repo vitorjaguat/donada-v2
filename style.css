@@ -9,11 +9,8 @@ body {
 }
 .container {
   position: relative;
-  /* background-color: aqua; */
-  /* z-index: -1; */
   width: 450px;
   height: 600px;
-  /* height: fit-content; */
   z-index: 100;
   touch-action: none;
 }
