@@ -34,9 +34,9 @@ const load = () => {
         finger.style.display = 'block';
         progressBar.style.zIndex = '0';
         progressBar.style.display = 'none';
-        progressBar.style.opacity = 0;
+        progressBar.style.opacity = '0';
         progressBarLoaded.style.display = 'none';
-        progressBarLoaded.style.opacity = 0;
+        progressBarLoaded.style.opacity = '0';
 
         //Events:
         const pics = document.querySelectorAll('.pic');
