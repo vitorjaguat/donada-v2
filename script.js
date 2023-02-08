@@ -53,6 +53,9 @@ const load = () => {
             pic.classList.remove('on');
             if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
               pic.style.opacity = 1;
+              // if (i === arr.length - 1) {
+              //   pic.style.zIndex = '40';
+              // }
               pic.classList.add('on');
               arr.forEach((p) => {
                 if (!p.classList.contains('on')) {
@@ -63,8 +66,14 @@ const load = () => {
           });
         });
 
-        pics[0].addEventListener('pointerleave', () => {
-          finger.style.display = 'block';
+        pics[0].addEventListener('pointerleave', (e) => {
+          if (
+            !pics[totalFrames - 1].classList.contains('on')
+            // !pics[totalFrames - 2].classList.contains('on')
+          ) {
+            finger.style.display = 'block';
+          }
+          console.log(e);
         });
       }
     };
