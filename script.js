@@ -14,6 +14,29 @@ const totalFrames = 24;
 let loadedFrames = 0;
 const finger = document.querySelector('.finger-icon');
 
+const windowAdapt = () => {
+  const pics = document.querySelectorAll('.pic');
+  container.style.height = window.innerHeight + 'px';
+
+  let windowRatio = window.innerHeight / window.innerWidth;
+  let picRatio = pics[0].naturalHeight / pics[0].naturalWidth;
+
+  if (windowRatio < picRatio) {
+    //landscape
+    pics.forEach((pic) => {
+      pic.style.height = '100%';
+      pic.style.width = 'auto';
+    });
+  } else {
+    //portrait
+    console.log('portrait');
+    pics.forEach((pic) => {
+      pic.style.height = 'auto';
+      pic.style.width = '100%';
+    });
+  }
+};
+
 const load = () => {
   finger.style.display = 'none';
   for (i = 0; i < 24; i++) {
@@ -75,12 +98,24 @@ const load = () => {
           }
           console.log(e);
         });
+        windowAdapt();
       }
     };
   }
 };
 
-load();
+// load();
+
+// windowAdapt();
+
+document.addEventListener('DOMContentLoaded', function () {
+  load();
+  // windowAdapt();
+
+  window.addEventListener('resize', function () {
+    windowAdapt();
+  });
+});
 
 //OTHER EVENTS:
 //Events:
