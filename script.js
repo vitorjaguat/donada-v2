@@ -1,12 +1,11 @@
 const body = document.body;
 const container = document.querySelector('.container');
 
-function scale(number, inMin, inMax, outMin, outMax) {
+const scale = (number, inMin, inMax, outMin, outMax) => {
   return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
-}
+};
 
 //load images and prepare events:
-
 const spinner = document.querySelector('.loader-img');
 const progressBar = document.querySelector('.progress-bar');
 const progressBarLoaded = document.querySelector('.bar-loaded');
@@ -23,6 +22,9 @@ const windowAdapt = () => {
 
   if (windowRatio < picRatio) {
     //landscape
+    console.log('windowRatio:', windowRatio);
+    console.log('picRatio:', picRatio);
+    console.log('landscape');
     pics.forEach((pic) => {
       pic.style.height = '100%';
       pic.style.width = 'auto';
@@ -55,11 +57,11 @@ const load = () => {
       console.log(loadedFrames);
       if (loadedFrames === totalFrames) {
         finger.style.display = 'block';
-        progressBar.style.zIndex = '0';
+        // progressBar.style.zIndex = '0';
         progressBar.style.display = 'none';
-        progressBar.style.opacity = '0';
-        progressBarLoaded.style.display = 'none';
-        progressBarLoaded.style.opacity = '0';
+        // progressBar.style.opacity = '0';
+        // progressBarLoaded.style.display = 'none';
+        // progressBarLoaded.style.opacity = '0';
 
         //Events:
         const pics = document.querySelectorAll('.pic');
@@ -69,16 +71,12 @@ const load = () => {
         pics[0].addEventListener('pointermove', (e) => {
           finger.style.display = 'none';
           const x = e.offsetX;
-          // console.log(x);
           const cWidth = pics[0].offsetWidth;
           const l = pics.length;
           pics.forEach((pic, i, arr) => {
             pic.classList.remove('on');
             if (x >= (cWidth / l) * i && x < (cWidth / l) * (i + 1)) {
               pic.style.opacity = 1;
-              // if (i === arr.length - 1) {
-              //   pic.style.zIndex = '40';
-              // }
               pic.classList.add('on');
               arr.forEach((p) => {
                 if (!p.classList.contains('on')) {
@@ -90,13 +88,9 @@ const load = () => {
         });
 
         pics[0].addEventListener('pointerleave', (e) => {
-          if (
-            !pics[totalFrames - 1].classList.contains('on')
-            // !pics[totalFrames - 2].classList.contains('on')
-          ) {
+          if (!pics[totalFrames - 1].classList.contains('on')) {
             finger.style.display = 'block';
           }
-          console.log(e);
         });
         windowAdapt();
       }
