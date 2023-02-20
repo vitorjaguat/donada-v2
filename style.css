@@ -1,16 +1,9 @@
-* {
-  /* box-sizing: border-box; */
-}
 body {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   background-color: grey;
 }
 .container {
@@ -21,13 +14,8 @@ body {
   bottom: 0;
   margin: 0;
   padding: 0;
-  /* width: 100%; */
-  /* height: 100vh; */
-  /* z-index: 1; */
   touch-action: none;
-  /* background-color: aqua; */
   overflow: hidden;
-  /* opacity: 0; */
 }
 
 .pic {
@@ -36,13 +24,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   display: block;
-  /* height: 100vh; */
-  /* width: 100%; */
-  /* width: 100vw; */
-  /* z-index: 1; */
   touch-action: auto;
-  /* width: 100%;
-  height: 100%; */
 }
 
 .finger-icon {
@@ -54,7 +36,6 @@ body {
   width: 3rem;
   height: 3.5rem;
   object-fit: contain;
-  /* background-color: aqua; */
 }
 
 .finger-icon .finger {
@@ -70,7 +51,6 @@ body {
     opacity: 0;
     scale: 1;
   }
-
   10% {
     opacity: 1;
     scale: 1;
@@ -101,48 +81,11 @@ body {
   }
 }
 
-/* @keyframes finger-animation {
-  0% {
-    opacity: 0;
-    scale: 1;
-  }
-
-  10% {
-    opacity: 1;
-    scale: 1;
-  }
-  25% {
-    opacity: 0;
-    scale: 1;
-  }
-  35% {
-    opacity: 1;
-    scale: 1;
-  }
-  50% {
-    opacity: 0;
-    scale: 1;
-  }
-  60% {
-    opacity: 1;
-    scale: 1.05;
-  }
-  90% {
-    opacity: 1;
-    scale: 1.1;
-  }
-  100% {
-    opacity: 0;
-    scale: 1.05;
-  }
-} */
-
 .progress {
   display: flex;
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.4);
-
   position: absolute;
   top: 0;
   left: 0;

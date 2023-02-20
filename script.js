@@ -5,7 +5,6 @@ const scale = (number, inMin, inMax, outMin, outMax) => {
   return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 };
 
-//load images and prepare events:
 const spinner = document.querySelector('.loader-img');
 const progressBar = document.querySelector('.progress-bar');
 const progressBarLoaded = document.querySelector('.bar-loaded');
@@ -39,6 +38,7 @@ const windowAdapt = () => {
   }
 };
 
+//load images and prepare events:
 const load = () => {
   finger.style.display = 'none';
   for (i = 0; i < 24; i++) {
@@ -51,17 +51,13 @@ const load = () => {
     }
     newImg.style.opacity = 0;
     container.append(newImg);
-    newImg.onload = function () {
+    newImg.onload = () => {
       loadedFrames++;
       progressBarLoaded.style.width = `${(loadedFrames / totalFrames) * 100}%`;
       console.log(loadedFrames);
       if (loadedFrames === totalFrames) {
         finger.style.display = 'block';
-        // progressBar.style.zIndex = '0';
         progressBar.style.display = 'none';
-        // progressBar.style.opacity = '0';
-        // progressBarLoaded.style.display = 'none';
-        // progressBarLoaded.style.opacity = '0';
 
         //Events:
         const pics = document.querySelectorAll('.pic');
@@ -98,15 +94,11 @@ const load = () => {
   }
 };
 
-// load();
-
-// windowAdapt();
-
-document.addEventListener('DOMContentLoaded', function () {
+//init:
+document.addEventListener('DOMContentLoaded', () => {
   load();
-  // windowAdapt();
 
-  window.addEventListener('resize', function () {
+  window.addEventListener('resize', () => {
     windowAdapt();
   });
 });
