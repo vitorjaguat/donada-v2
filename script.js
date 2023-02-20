@@ -41,7 +41,7 @@ const windowAdapt = () => {
 //load images and prepare events:
 const load = () => {
   finger.style.display = 'none';
-  for (i = 0; i < 24; i++) {
+  for (i = 0; i < totalFrames; i++) {
     const newImg = document.createElement('img');
     newImg.classList.add('pic');
     if (i < 9) {
