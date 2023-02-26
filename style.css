@@ -56,6 +56,42 @@ body {
     scale: 1;
   }
   25% {
+    opacity: 1;
+    scale: 1;
+    transform: translateX(-12px);
+  }
+  55% {
+    opacity: 1;
+    scale: 1;
+    transform: translateX(12px);
+  }
+  70% {
+    opacity: 1;
+    scale: 1;
+    transform: translateX(0);
+  }
+  85% {
+    opacity: 1;
+    scale: 1.05;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    scale: 1;
+    transform: translateX(0);
+  }
+}
+
+/* @keyframes finger-animation {
+  0% {
+    opacity: 0;
+    scale: 1;
+  }
+  10% {
+    opacity: 1;
+    scale: 1;
+  }
+  25% {
     opacity: 0;
     scale: 1;
   }
@@ -79,7 +115,7 @@ body {
     opacity: 0;
     scale: 1.05;
   }
-}
+} */
 
 .progress {
   display: flex;
