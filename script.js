@@ -1,10 +1,6 @@
 const body = document.body;
 const container = document.querySelector('.container');
 
-const scale = (number, inMin, inMax, outMin, outMax) => {
-  return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
-};
-
 const spinner = document.querySelector('.loader-img');
 const progressBar = document.querySelector('.progress-bar');
 const progressBarLoaded = document.querySelector('.bar-loaded');
